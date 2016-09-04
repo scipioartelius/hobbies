@@ -6,7 +6,7 @@ import { EditBookComponent } from './edit-book.component';
 import { LoggedInGuard } from '../authentication/logged-in.guard';
 
 export const booksRoutes: Routes = [{
-    path: 'books',
+    path: '',
     component: BooksComponent,
     children: [
         { path: '', component: BookListComponent },

@@ -6,6 +6,20 @@ import { LoggedOutGuard } from './authentication/logged-out.guard';
 export const appRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
+    { path: 'books', loadChildren: () =>
+        new Promise(resolve =>
+            (require as any).ensure([], () =>
+                resolve(require('./books/books.module').BooksModule)
+            )
+        )
+    },
+    { path: 'movies', loadChildren: () =>
+        new Promise(resolve =>
+            (require as any).ensure([], () =>
+                resolve(require('./movies/movies.module').MoviesModule)
+            )
+        )
+    },
     { path: '**', redirectTo: '/home' },
 ];
 

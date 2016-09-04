@@ -6,7 +6,7 @@ import { EditMovieComponent } from './edit-movie.component';
 import { LoggedInGuard } from '../authentication/logged-in.guard';
 
 export const moviesRoutes: Routes = [{
-    path: 'movies',
+    path: '',
     component: MoviesComponent,
     children: [
         { path: '', component: MovieListComponent },
